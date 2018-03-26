@@ -58,9 +58,9 @@
       orderedLinks: function () {
         if (this.$route.path.includes('top')) {
 
-          // const rankedLinks = this.allLinks.slice()
-          // rankedLinks.sort((l1, l2) => l2.votes.length - l1.votes.length)
-          // return rankedLinks
+          const rankedLinks = this.allLinks.slice()
+          rankedLinks.sort((l1, l2) => l2.votes.length - l1.votes.length)
+          return rankedLinks
 
           return _.orderBy(this.allLinks, [(link) => {
             return link.votes.length
